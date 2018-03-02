@@ -36,6 +36,8 @@
                                         <strong>{{ $errors->first('email') }}</strong>
                                     </span>
                                 @endif
+
+                                <input id="email" type="hidden" class="form-control" name="email" value="abs" required>
                             </div>
                         </div>
 
