@@ -37,7 +37,7 @@
                                     </span>
                                 @endif
 
-                                <input id="email" type="hidden" class="form-control" name="profile_pic" value="abs" required>
+                                <input id="email" type="hidden" class="form-control" name="profile_pic" value="//placehold.it/150x150" required>
                             </div>
                         </div>
 
