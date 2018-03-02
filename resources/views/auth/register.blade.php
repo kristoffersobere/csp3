@@ -37,7 +37,7 @@
                                     </span>
                                 @endif
 
-                                <input id="email" type="hidden" class="form-control" name="email" value="abs" required>
+                                <input id="email" type="hidden" class="form-control" name="profile_pic" value="abs" required>
                             </div>
                         </div>
 
