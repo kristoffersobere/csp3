@@ -28,3 +28,12 @@ div.ex{
 div.row.comments:hover  div.ex {
     display: block;
 }
+footer{
+	  color: #000;
+  clear: both;
+  margin: 0em 0em 0em 0em;
+  padding: 0.75em 0.75em;
+  background: #87ceeb;
+  position: relative;
+  top: 200px;
+}
