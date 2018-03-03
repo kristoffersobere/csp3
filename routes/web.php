@@ -56,4 +56,4 @@ Route::GET('admin-password/reset/{token}','Admin\ResetPasswordController@showRes
 
 
 Route::POST('admin-register','Admin\RegisterController@register');             
-Route::GET('admin-register','Admin\RegisterController@showRegistrationForm')->name('admin-register')->middleware('auth:admins');
+Route::GET('admin-register','Admin\RegisterController@showRegistrationForm')->name('admin-register');
