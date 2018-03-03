@@ -1,5 +1,6 @@
 @extends('layouts.chatlayout')
 @section('title')
+Cloud9|Chat
 @endsection
 @section('main_content')
 <div class="container-fluid" >

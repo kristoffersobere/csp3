@@ -1,6 +1,6 @@
 @extends('partials.applayout')
 @section('title')
- Add Post
+Cloud9|Add Post
 @endsection
 
 @section('main_content')

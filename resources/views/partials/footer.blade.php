@@ -1,6 +1,6 @@
 <footer class="page-footer center-on-small-only unique-color-dark pt-0" >
 
-    <div style="background-color: #00bfff;">
+    <div style="background-color: #fff;">
         <div class="container">
             <!--Grid row-->
             <div class="row py-4 d-flex align-items-center">
@@ -12,7 +12,7 @@
                 <!--Grid column-->
 
                 <!--Grid column-->
-                <div class="col-md-6 col-lg-7 text-center text-md-right">
+               {{--  <div class="col-md-6 col-lg-7 text-center text-md-right">
                     <!--Facebook-->
                     <a class="icons-sm fb-ic ml-0"><i class="fa fa-facebook white-text mr-lg-4"> </i></a>
                     <!--Twitter-->
@@ -23,7 +23,7 @@
                     <a class="icons-sm li-ic"><i class="fa fa-linkedin white-text mr-lg-4"> </i></a>
                     <!--Instagram-->
                     <a class="icons-sm ins-ic"><i class="fa fa-instagram white-text mr-lg-4"> </i></a>
-                </div>
+                </div> --}}
                 <!--Grid column-->
 
             </div>

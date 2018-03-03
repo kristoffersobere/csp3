@@ -1,7 +1,7 @@
 @extends('partials.applayout')
 
 @section('title')
-    Blog
+    Cloud9
 @endsection
 
 

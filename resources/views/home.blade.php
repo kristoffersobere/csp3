@@ -1,7 +1,7 @@
 @extends('partials.applayout')
 
 @section('title')
-Home
+ Cloud9|Home
 @endsection
 
 @section('main_content')

@@ -1,4 +1,7 @@
 $(document).ready(function(){
+	 $('#fadein').fadeOut(1);
+    $('#fadein').removeClass('hidden');
+    $('#fadein').fadeIn(3000);
 
 ///////////for modal
 	  $( "#addPost" ).click(function() {

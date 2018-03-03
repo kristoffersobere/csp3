@@ -1,7 +1,7 @@
 @extends('partials.applayout')
 
 @section('title')
-UserInfo
+Cloud9|UserInfo
 @endsection
 
 @section('main_content')
