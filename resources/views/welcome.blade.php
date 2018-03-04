@@ -30,7 +30,7 @@
                    <div class="panel-heading"><a href="#" class="pull-right"><strong>View all</strong></a> <h4> {{ str_limit($post->title, 20) }}</h4></div>
                     <div class="panel-body">
                         <small>by {{$post->user->name}}</small>
-                      <img src="//placehold.it/150x150" class="img-circle pull-right"> <p class="content">{{ str_limit($post->content, 400) }}</p>
+                      <img src="{{$post->user->profile_pic}}" class="img-circle pull-right" style="height: 150px;width: 150px;"> <p class="content">{{ str_limit($post->content, 400) }}</p>
                       <div class="clearfix"></div>
                       <hr>
                       <div class="well reloadcomments" id="reloadcomments{{$i}}" >
@@ -39,7 +39,7 @@
                   
                         <div class="row comments ">
                     
-                          <img src="//placehold.it/40x40" class="img-circle pull-left">
+                          <img src="{{$comment->user->profile_pic}}" class="img-circle pull-left" style="height: 40px;width: 40px;">
                           <p class="comment">
                           <a href="#">{{$comment->user->name}}</a> 
                           {{$comment->content}}<br>

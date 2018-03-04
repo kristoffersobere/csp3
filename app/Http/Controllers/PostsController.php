@@ -11,14 +11,14 @@ class PostsController extends Controller
 {    
     public function __construct()
     {
-        $this->middleware('auth');
+        //$this->middleware('auth');
 
         // $this->middleware('auth');
 
-        // $this->middleware('log', ['only' => [
-        //     'auth',
-        //     'auth:admins',
-        // ]]);
+        $this->middleware('log', ['only' => [
+            'auth',
+            'auth:admins',
+        ]]);
 
         // $this->middleware('auth:admins', ['except' => [
         //     'show',
@@ -117,8 +117,10 @@ class PostsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
-        //
+        $delpost = Post::find($id);
+        $delpost->delete();
+        return 'deleted';
     }
 }

@@ -12,7 +12,7 @@ Home
             <div class="panel panel-default">
                 <div class="panel-heading">   <h2>List</h2></div>
 
-                <div class="panel-body">
+                <div class="panel-body" id="reloadadminpost">
                     @if (session('status'))
                         <div class="alert alert-success">
                             {{ session('status') }}
@@ -24,8 +24,8 @@ Home
                 <div class="panel panel-default">
 
                    <div class="panel-heading">
-                    <button class="delPost" type="button">X</button> 
-                    <a href="#" class="pull-right"><strong>View all</strong></a>
+                    <button class="delpost" type="button" data-index="{{$post->id}}" data-token="{{ csrf_token() }}">X</button> 
+                     <a href='{{url("post/$post->id/edit")}}' class="pull-right"><button class="btn btn-warning">Edit this Bruhh</button></a> 
                     <div class="clearfix"></div>
                     {{-- <a href='{{url("post/$post->id/edit")}}' class="pull-right"><button class="btn btn-warning">Edit this Bruhh</button></a>  --}}
 
@@ -71,16 +71,7 @@ Home
                       </div>
                       
                       <hr>
-                      {{-- <form action='{{ action('CommentsController@store') }}' method="POST">
-                      <div class="input-group">
-                        <div class="input-group-btn">
-                        <button class="btn btn-default">+1</button>
-                        <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-share"></i></button>
-                        </div>
-                        <input type="hidden" name="postid" value="{{$post->id}}">
-                        <input class="form-control" placeholder="Add a comment.." type="text" name="comments">
-                      </div>
-                      </form> --}}
+                     
                       
                     </div>
                  </div>
@@ -95,13 +86,35 @@ Home
         </div> {{-- col-8 --}}
         <div class="col-md-4">
             <div class="panel panel-default">
-                <div class="panel-heading">   
-                	<h4>Nav</h4>
+                <div class="panel-heading" id="reloadadminuser">   
+                	<h4>Users</h4>
                  
-                    <a href=""><li>Add User </li></a>
-                    <a href=""><li>Edit User </li></a>
-                    <a href=""><li>Delete User </li></a>
-                    
+                    <a href='{{url("register")}}'><i class="fas fa-user-plus fa-4x"></i></a>
+     
+
+                     @forelse($users as $user)
+              <div class="panel">
+               <div class="row">
+                  <div class="col-xs-2">
+                   
+                   {{--    <img src="//placehold.it/40x40" class="img-circle pull-left"> --}}
+                      @if($user->profile_pic)
+                      <img src="{{$user->profile_pic}}" style="height: 40px;width: 40px;" class="img-circle pull-left">
+                      @else
+                      <img src="//placehold.it/40x40" class="img-circle pull-left">
+                      @endif
+          
+                  
+
+                    </div>
+                  <div class="col-xs-6"><p class="pull-left"> {{$user->name}}</p></div>
+                  <div><a href="#" class="deluser" data-index="{{$user->id}}"><i class="fas fa-times"></i></a></div>
+                
+               </div>
+              </div>
+             @empty
+             <p>No User</p>
+             @endforelse
                  
                 </div>
             </div>

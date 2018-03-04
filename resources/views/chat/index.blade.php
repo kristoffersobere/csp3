@@ -5,7 +5,7 @@ Cloud9|Chat
 @section('main_content')
 <div class="container-fluid" >
 <div class="menu">
-            <div class="back"> <a href="{{url('/home')}}"><i class="fa fa-chevron-left"></i> <img src="https://i.imgur.com/DY6gND0.png" draggable="false"/></a></div>
+            <div class="back"> <a href="{{url('/home')}}"><i class="fa fa-chevron-left"></i> <img src="{{$friend->profile_pic}}" draggable="false" style="height: 40px;width: 40px;" /></a></div>
             <div class="name">{{$friend->name}}</div>
            {{--  <div class="last">18:09</div> --}}
         </div>
@@ -16,7 +16,7 @@ Cloud9|Chat
       @forelse($chats as $chat)
     @if ($chat->user_id != Auth::user()->id)
     <li class="other">
-        <div class="avatar"><img src="https://i.imgur.com/DY6gND0.png" draggable="false"/></div>
+        <div class="avatar"><img src="{{$friend->profile_pic}}" draggable="false" style="height: 40px;width: 40px;"/></div>
       <div class="msg">
         <strong>{{$chat->chat}}</strong>
          <p>{{$friend->name}}</p>
@@ -25,7 +25,7 @@ Cloud9|Chat
     </li>
     @else
     <li class="self">
-        <div class="avatar"><img src="https://i.imgur.com/HYcn9xO.png" draggable="false"/></div>
+        <div class="avatar"><img src="{{Auth::user()->profile_pic}}" draggable="false" style="height: 40px;width: 40px;"/></div>
       <div class="msg">
         <strong>{{$chat->chat}}</strong>
          <p>{{Auth::user()->name}}</p>
@@ -131,7 +131,7 @@ Cloud9|Chat
     </ol>
     <form>
      {{ csrf_field() }}
-    <input class="textarea" id="textmsg" type="text" placeholder="Type here!"/><button href="#sendmsg" type="button" data-id="{{$friend->id}}" id="sendmsg" class="emojis"></button >
+    <input class="textarea" id="textmsg" type="text" placeholder="Type here!"/><button href="#sendmsg" type="button" data-id="{{$friend->id}}" id="sendmsg" class="emojis"><i class="fas fa-envelope"></i></button >
     </form>
     </div>
     @endsection

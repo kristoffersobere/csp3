@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	 $('#fadein').fadeOut(1);
+	$('#fadein').fadeOut(1);
     $('#fadein').removeClass('hidden');
     $('#fadein').fadeIn(3000);
 
@@ -7,6 +7,31 @@ $(document).ready(function(){
 	  $( "#addPost" ).click(function() {
 	 	 	$('#myModal').modal('show');
 	  });
+
+	 $('.delpost').click(function(){
+	 	var id = $(this).attr('data-index');
+	 	 var token = $(this).data('token');
+	 	// console.log(id);
+	 	var url = "http://localhost:8000/post/";
+
+	 		$.ajax({
+	 			type: 'post',//pra sa resource na route
+				url : url+id,
+			
+					
+				//pra sa resource na route
+        		data: {_method: 'delete', _token :token},
+
+			
+				success:function(data){
+					console.log(data);
+				$("#reloadadminpost").load(location.href + " #reloadadminpost");
+				//$("#ulol"+div_id).load(location.href + " #ulol"+div_id+">*");
+				}
+			});
+
+	 });
+
 
 /////////ajax for delete comment
 	  $(".delComment").click(function(){
@@ -40,8 +65,30 @@ $(document).ready(function(){
 
 				},
 				success:function(data){
-				console.log(data);
+	
 		  		$("#friendslist").load(location.href + " #friendslist"+">*");
+				}
+			});
+
+		  
+
+	  });
+
+	    /////////ajax for delete user
+	  $(".deluser").click(function(){
+	  		var id = $(this).attr('data-index');
+	  		var url = "http://localhost:8000/admin/delete-user/";
+	  		//console.log(id);
+	  		$.ajax({
+				method: 'get',
+				url : url+id,
+				data: {
+
+				},
+				success:function(data){
+
+				//console.log(data);
+		  		$("#reloadadminuser").load(location.href + " #reloadadminuser"+">*");
 				}
 			});
 
@@ -153,15 +200,8 @@ $(document).ready(function(){
 			  	});
 		  }); 
 
-	  		//comments
-			// setInterval(function(){
-			// $('.reloadcomments').load(location.href +' .reloadcomments'+ '>*');
-			// 	   console.log('1')
-			// },3000);
-
-
 });/// end  
 setInterval(function(){
 		$("#reloadchat").load(location.href + " #reloadchat"+">*");
-				   console.log('1')
+				  
 			},3000);

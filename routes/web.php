@@ -46,6 +46,7 @@ Route::get('/chat/getChat/{id}', 'ChatController@getChat')->name('chat.show');
 
 
 Route::get('admin/home', 'AdminController@index');
+Route::get('admin/delete-user/{id}', 'AdminController@deleteUser');
 
 Route::POST('admin','Admin\LoginController@login'); 
 Route::GET('admin','Admin\LoginController@showLoginForm')->name('adminlogin');           
