@@ -12,7 +12,7 @@ $(document).ready(function(){
 	 	var id = $(this).attr('data-index');
 	 	 var token = $(this).data('token');
 	 	// console.log(id);
-	 	var url = "http://localhost:8000/post/";
+	 	var url = "http://kristoffersobere-csp3.herokuapp.com/post/";
 
 	 		$.ajax({
 	 			type: 'post',//pra sa resource na route
