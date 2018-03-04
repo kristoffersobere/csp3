@@ -77,7 +77,7 @@ $(document).ready(function(){
 	    /////////ajax for delete user
 	  $(".deluser").click(function(){
 	  		var id = $(this).attr('data-index');
-	  		var url = "http://localhost:8000/admin/delete-user/";
+	  		var url = "http://kristoffersobere-csp3.herokuapp.com/admin/delete-user/";
 	  		//console.log(id);
 	  		$.ajax({
 				method: 'get',
